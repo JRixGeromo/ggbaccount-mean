@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/ggbaccount', { useMongoClient: true });
+mongoose.connect('mongodb://localhost/ggbaccount-mean', { useMongoClient: true });
 const db = mongoose.connection;
 // init app
 const app = express();
