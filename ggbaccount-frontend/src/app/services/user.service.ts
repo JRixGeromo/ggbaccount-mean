@@ -11,4 +11,11 @@ export class UserService {
     return this.http.get('http://localhost:3000/api/users').map(res => res.json());
   }
 
+  saveUser(user){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/api/users', user, {headers: headers})
+      .map(res => res.json());
+  }
+
 }
