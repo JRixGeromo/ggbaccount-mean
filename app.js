@@ -2,13 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/ggbaccount-mean', { useMongoClient: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/ggbaccount-mean', { useMongoClient: true });
 const db = mongoose.connection;
 // init app
 const app = express();
 
 //Port
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Enable CORS
 app.use(function(req, res, next) {
